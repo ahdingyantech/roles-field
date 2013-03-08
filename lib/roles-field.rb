@@ -1,51 +1,53 @@
 # coding: utf-8
 module RolesField
-  module Extend
+  module Base
     extend ActiveSupport::Concern
 
     included do
-      ROLES = %w[admin manager teacher student]
-      ROLE_NAMES = %w[系统管理员 教学管理员 老师 学生]
-      FIELD = :roles_mask
-
-      scope :with_role, lambda { |role| 
-        {:conditions => ['? & ? > 0', FIELD, 2 ** ROLES.index(role.to_s)]}
-      }
-
-      ROLES.each do |role|
-        define_method "is_#{role}?" do
-          role? role
-        end
-      end
+      ROLES_FIELD_CONFIG = {}
     end
 
-    module InstanceMethods
-      def roles
-        ROLES.reject { |role| 
-          ((self[FIELD] || 0) & 2 ** ROLES.index(role)).zero?
-        }
-      end
+    module ClassMethods
+      def roles_field(field, options={})
+        roles = options[:roles]
 
-      def role?(role)
-        self.roles.include? role.to_s
-      end
+        class_eval %(
+          def roles=(roles)
+            self.#{field} = (#{roles} & roles).map { |role| 
+              2 ** #{roles}.index(role.to_sym)
+            }.sum
+          end
 
-      def set_role(role)
-        self.roles = (ROLES & [role.to_s])
-        save
-      end
+          def roles
+            #{roles}.reject { |role| 
+              ((#{field} || 0) & 2 ** #{roles}.index(role.to_sym)).zero?
+            }
+          end
 
-      def role_str
-        ROLE_NAMES[ROLES.index(roles.first)]
-      end
+          def role?(role)
+            roles.include? role.to_sym
+          end
 
-      private
+          def set_role(role)
+            self.roles = (#{roles} & [role.to_sym])
+            save
+          end
 
-        def roles=(roles)
-          self[FIELD] = (ROLES & roles).map { |role| 
-            2 ** ROLES.index(role) 
-          }.sum
+          scope :with_role, lambda { |role| 
+            {
+              :conditions => ['#{field} & ? > 0', 2 ** #{roles}.index(role.to_sym)]
+            }
+          }
+        )
+
+        roles.each do |role|
+          define_method "is_#{role}?" do
+            role? role
+          end
         end
+      end
     end
   end
 end
+
+ActiveRecord::Base.send :include, RolesField::Base
