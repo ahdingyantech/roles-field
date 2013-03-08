@@ -12,10 +12,11 @@ gem 'roles-field'
 ```
 
 ## Usage
-in a model:
+in a model width a field named 'roles_mask':
 
 ```ruby
 class User < ActiveRecord::Base
+  # you can change to another field
   roles_field :roles_mask, :roles => [:admin, :manager, :teacher, :student]
 end
 ```
