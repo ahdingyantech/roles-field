@@ -41,3 +41,6 @@ then
 User.with_role :admin
 # -> scope [...]
 ```
+
+## TODO
+add some test
