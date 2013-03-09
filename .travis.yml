@@ -9,3 +9,6 @@ services: mysql
 
 before_script:
   - mysql -e 'create database roles-field-test;'
+
+script:
+  - bundle exec rspec spec
