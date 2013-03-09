@@ -58,4 +58,4 @@ User.with_role :admin
 ```
 
 ## TODO
-add some test
+to support multi-roles setting
