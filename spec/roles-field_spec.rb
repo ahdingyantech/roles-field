@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'activerecord'
+require 'db_init'
 
 class TestMigration < ActiveRecord::Migration
   def self.up

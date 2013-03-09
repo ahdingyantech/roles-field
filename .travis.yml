@@ -5,9 +5,11 @@ rvm:
   - 2.0.0
   - jruby-head
 
-services: mysql
+services: 
+  - mysql
 
 before_script:
+  - cp spec/dbconfig.yaml.travis spec/dbconfig.yaml
   - mysql -e 'create database roles-field-test;'
 
 script:

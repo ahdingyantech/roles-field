@@ -1,12 +1,8 @@
 require 'mysql2'
 require 'active_record'
+require 'yaml'
 
-dbconfig = {
-  :adapter  => 'mysql2',
-  :database => 'roles-field-test',
-  :username => 'root',
-  :encoding => 'utf8'
-}
+dbconfig = YAML.load_file('spec/dbconfig.yaml')['test']
 
 database = dbconfig.delete(:database)
 
