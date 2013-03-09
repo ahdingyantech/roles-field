@@ -4,6 +4,7 @@ roles-field
 [![Gem Version](https://badge.fury.io/rb/roles-field.png)](http://badge.fury.io/rb/roles-field)
 [![Build Status](https://travis-ci.org/mindpin/roles-field.png?branch=master)](https://travis-ci.org/mindpin/roles-field)
 [![Code Climate](https://codeclimate.com/github/mindpin/roles-field.png)](https://codeclimate.com/github/mindpin/roles-field)
+[![Coverage Status](https://coveralls.io/repos/mindpin/roles-field/badge.png?branch=master)](https://coveralls.io/r/mindpin/roles-field)
 
 ## Use for
 To add simple roles feature to a model (like user) in a integer field.
