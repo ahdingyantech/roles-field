@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rubygems'
 
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __FILE__)
