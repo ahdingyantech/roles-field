@@ -10,7 +10,6 @@ services:
 
 before_script:
   - cp spec/dbconfig.yaml.travis spec/dbconfig.yaml
-  - mysql -e 'create database roles-field-test;'
 
 script:
   - bundle exec rspec spec
