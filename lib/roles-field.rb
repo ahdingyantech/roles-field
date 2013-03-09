@@ -28,9 +28,12 @@ module RolesField
             roles.include? role.to_sym
           end
 
-          def set_role(role)
+          def role=(role)
             self.roles = (#{roles} & [role.to_sym])
-            save
+          end
+
+          def set_role(role)
+            self.role = role
           end
 
           scope :with_role, lambda { |role| 
