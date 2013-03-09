@@ -16,7 +16,7 @@ gem 'roles-field'
 ```
 
 ## Usage
-in a model width a field named 'roles_mask':
+in a model with a field named 'roles_mask' (you can use any other field name):
 
 ```ruby
 # generate a model with a integer field
