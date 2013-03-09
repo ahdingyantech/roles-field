@@ -1,11 +1,12 @@
-roles_field
+roles-field
 ===========
 
+[![Gem Version](https://badge.fury.io/rb/roles-field.png)](http://badge.fury.io/rb/roles-field)
 [![Build Status](https://travis-ci.org/mindpin/roles-field.png?branch=master)](https://travis-ci.org/mindpin/roles-field)
 [![Code Climate](https://codeclimate.com/github/mindpin/roles-field.png)](https://codeclimate.com/github/mindpin/roles-field)
 
-## Target
-To add simple roles feature to a model (like user) in a field.
+## Use for
+To add simple roles feature to a model (like user) in a integer field.
 
 ## Install
 include in Gemfile:
