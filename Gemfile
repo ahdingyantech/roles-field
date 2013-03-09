@@ -7,3 +7,4 @@ gem 'activesupport'
 gem 'activerecord'
 gem 'rake'
 gem 'rspec'
+gem 'coveralls', require: false
