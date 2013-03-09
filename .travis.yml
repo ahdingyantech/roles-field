@@ -9,7 +9,6 @@ services:
   - mysql
 
 before_script:
-  - mysql -e 'create database roles-field-test;' -uroot
   - cp spec/dbconfig.yaml.travis spec/dbconfig.yaml
 
 script:

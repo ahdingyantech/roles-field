@@ -1,7 +1,7 @@
 roles_field
 ===========
 
-[![Travis CI](https://api.travis-ci.org/mindpin/roles-field.png?branch=master&.png)](https://travis-ci.org/mindpin/roles-field)
+[![Build Status](https://travis-ci.org/mindpin/roles-field.png?branch=master)](https://travis-ci.org/mindpin/roles-field)
 [![Code Climate](https://codeclimate.com/github/mindpin/roles-field.png)](https://codeclimate.com/github/mindpin/roles-field)
 
 ## Target

@@ -5,7 +5,7 @@ require 'yaml'
 
 dbconfig = YAML.load_file('spec/dbconfig.yaml')['test']
 
-database = dbconfig.delete(:database)
+database = dbconfig.delete('database')
 
 ActiveRecord::Base.establish_connection(dbconfig)
 
