@@ -43,6 +43,23 @@ describe RolesField::Base do
       end
     end
 
+    describe '#role' do
+      it {
+        user = User.create :role => :reader
+        user.role.should == :reader
+      }
+
+      it {
+        user = User.create :role => :admin
+        user.role.should == :admin
+      }
+
+      it {
+        user = User.create
+        user.role.should == nil
+      }
+    end
+
     describe '#role? #set_role' do
       it '设置角色后，对象可以判断是否具有某些角色' do
         @user.set_role :admin

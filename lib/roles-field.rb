@@ -28,6 +28,10 @@ module RolesField
             roles.include? role.to_sym
           end
 
+          def role
+            roles.first
+          end
+
           def role=(role)
             self.roles = (#{roles} & [role.to_sym])
           end
