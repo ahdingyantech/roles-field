@@ -55,6 +55,10 @@ then
 @user.is_teacher?
 # -> false
 
+@user.role
+# -> :admin
+# return user's first role
+
 User.with_role :admin
 # -> scope [...]
 ```
