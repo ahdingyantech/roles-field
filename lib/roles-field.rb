@@ -25,11 +25,11 @@ module RolesField
           end
 
           def role?(role)
-            roles.include? role.to_sym
+            self.roles.include? role.to_sym
           end
 
           def role
-            roles.first
+            self.roles[0]
           end
 
           def role=(role)
