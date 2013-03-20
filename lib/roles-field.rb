@@ -2,11 +2,7 @@
 module RolesField
   module Base
     extend ActiveSupport::Concern
-
-    included do
-      ROLES_FIELD_CONFIG = {}
-    end
-
+    
     module ClassMethods
       def roles_field(field, options={})
         roles = options[:roles]
